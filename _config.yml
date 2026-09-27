@@ -1,0 +1,52 @@
+title: NFS Files Help
+description: Setup guides, error explanations and support for NFS Files — the NFS client for iPhone, iPad and Mac.
+# Canonical home: the GitHub Pages project address, which the app and the
+# App Store listing link to directly (James 2026-09-26: no redirecting people
+# to allgemselect.com). allgemselect.com is a mirror kept alive only for the
+# pending AdSense review — scripts/sync-allgemselect.sh publishes this same
+# tree there with url/baseurl/adsense overridden. Every internal link must go
+# through {{ site.baseurl }} (or relative_url) or it breaks under the
+# /nfsfiles-site/ sub-path.
+url: https://allgemselect.com
+baseurl: ""
+lang: en
+author: James Baker
+
+# The app's App Store record (both platforms share one id).
+app_store_url: https://apps.apple.com/us/app/nfs-files-nas-drive-client/id6789844265
+# Plus-alias: Gmail delivers it with zero setup, it filters/labels
+# independently, and if it ever leaks to spammers only the alias dies.
+# Never printed raw into HTML — see _includes/email.html (JS-assembled,
+# reversed parts) so crawlers don't harvest it.
+support_email: jbaker00+nfsfiles@gmail.com
+
+# AdSense. The client id is the same publisher as AdMob. `adsense_slot` is
+# the display ad unit's data-ad-slot — empty until James creates the unit in
+# AdSense (Ads → By ad unit → Display → responsive); the layout renders no
+# <ins> while it's empty, but the loader script stays so site verification
+# and Auto ads work.
+adsense_client: ca-pub-7871017136061682
+# Off here: AdSense can't approve a github.io sub-path, so the loader would
+# only add weight. The allgemselect.com mirror turns it on.
+adsense: true
+adsense_slot: ""
+
+markdown: kramdown
+kramdown:
+  input: GFM
+  hard_wrap: false
+plugins:
+  - jekyll-sitemap
+  - jekyll-seo-tag
+
+defaults:
+  - scope:
+      path: ""
+    values:
+      layout: default
+
+exclude:
+  - README.md
+  - Gemfile
+  - Gemfile.lock
+  - scripts
